@@ -8,9 +8,9 @@
   "scripts": {
     "pkg": "tsc && pkg -t node22-linux-x64 --output ./target/thingsboard-web-report-linux ./target/src && pkg -t node22-win-x64 --no-bytecode --public-packages \"*\" --public --output ./target/thingsboard-web-report-win.exe ./target/src && node install.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --watch '.' --ext 'ts' --exec 'ts-node server.ts'",
-    "start-prod": "nodemon --watch '.' --ext 'ts' --exec 'NODE_ENV=production ts-node server.ts'",
-    "build": "tsc",
+    "start": "node init && nodemon --watch '.' --ext 'ts' --exec 'ts-node server.ts'",
+    "start-prod": "node init && nodemon --watch '.' --ext 'ts' --exec 'NODE_ENV=production ts-node server.ts'",
+    "build": "node init && tsc",
     "postinstall": "node -e \"if (process.env.NODE_ENV !== 'production') { try { const stdout = require('child_process').execSync('patch-package').toString(); console.log(stdout); } catch (error) { console.log(error.message); if (error.stderr) { console.error(error.stderr.toString()); } process.exit(-1); } }\""
   },
   "dependencies": {

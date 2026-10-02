@@ -3,11 +3,11 @@
   "version": "4.4.0",
   "scripts": {
     "ng": "ng",
-    "start": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng serve --configuration development --host 0.0.0.0 --open",
-    "build": "ng build",
-    "build:prod": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build --configuration production",
-    "build:types": "node generate-types.js",
-    "build:icon-metadata": "node generate-icon-metadata.js",
+    "start": "node init && node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng serve --configuration development --host 0.0.0.0 --open",
+    "build": "node init && ng build",
+    "build:prod": "node init && node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build --configuration production",
+    "build:types": "node init && node generate-types.js",
+    "build:icon-metadata": "node init && node generate-icon-metadata.js",
     "lint": "ng lint",
     "prepare": "patch-package --error-on-fail"
   },

@@ -31,7 +31,6 @@ pom.xml.versionsBackup
 **/target
 **/Californium.properties
 **/Californium3.properties
-**/.env
 .instance_id
 instance-license.data
 rebuild-docker.sh
@@ -44,3 +43,5 @@ instance-license.data
 .planning
 docs/superpowers/
 __pycache__/
+config.bat
+node_modules
